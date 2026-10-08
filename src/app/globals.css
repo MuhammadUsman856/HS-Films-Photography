@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+:root {
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Outfit", sans-serif;
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  @apply bg-cream-soft text-ink font-body antialiased;
+}
+
+.dark body {
+  @apply bg-ink text-cream-soft;
+}
+
+::selection {
+  background: #c4a574;
+  color: #0c0b0a;
+}
+
+:focus-visible {
+  outline: 2px solid #c4a574;
+  outline-offset: 3px;
+}
+
+.glass {
+  @apply bg-cream-soft/70 dark:bg-ink/55 backdrop-blur-xl border-b border-ink/10 dark:border-white/10;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.editorial-rule {
+  @apply h-px w-16 bg-gold;
+}
